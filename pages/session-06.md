@@ -111,26 +111,7 @@ Quality scoring is the first step. The system looks at signals in the session: d
 
 # Step 2: Insight Extraction (ExpeL)
 
-```typescript
-// scripts/self-improvement/insight-extractor.ts
-// Compare high/low quality chunks → extract actionable rules
-
-function isActionableRule(text: string): boolean {
-  // Reject meta-observations
-  const metaPatterns = [
-    /^the (first|second|high|low) (chunk|quality)/i,
-    /chunk (was|is|failed|succeeded)/i,
-  ];
-
-  // Only keep rules with imperative verbs
-  const imperativeStarts = [
-    'always', 'never', 'verify', 'ensure',
-    'use', 'avoid', 'prefer', 'when', 'before'
-  ];
-  return imperativeStarts.some(v =>
-    text.toLowerCase().startsWith(v));
-}
-```
+<<< @/snippets/insight-extractor.ts
 
 Algorithm: Query Qdrant for high (>=7) and low (<=3) quality chunks → prompt Claude to extract rules → deduplicate → apply or stage.
 
@@ -142,14 +123,7 @@ The insight extractor compares successful and failed sessions, then asks Claude 
 
 # Step 3: Reflection Generation (Reflexion)
 
-```typescript
-// scripts/self-improvement/reflection-generator.ts
-interface FailureSignal {
-  type: 'retry-loop' | 'backtracking' | 'git-revert' | 'error-message';
-  description: string;
-  context: string;
-}
-```
+<<< @/snippets/reflection-generator.ts
 
 <div class="grid grid-cols-2 gap-8 pt-2">
 <div>
@@ -212,24 +186,7 @@ Rules have a full lifecycle. They start as proposals from insight extraction. On
 
 How rules get into Claude's context via `inject-rules.js`:
 
-```javascript
-const prompt = (process.env.USER_PROMPT || '').toLowerCase();
-const promptKeywords = prompt
-  .replace(/[^a-z0-9\s\-_.]/g, ' ')
-  .split(/\s+/).filter(w => w.length > 2);
-
-// Score each active rule against prompt keywords
-const scored = [];
-for (const rule of activeRules) {
-  let score = 0;
-  for (const kw of promptKeywords) {
-    if (rule.text.toLowerCase().includes(kw)) score++;
-  }
-  if (score > 0) scored.push({ rule, score });
-}
-// Inject top 8 matching rules (min 2 keyword matches)
-const topRules = scored.slice(0, 8).filter(s => s.score >= 2);
-```
+<<< @/snippets/inject-rules.js
 
 - Fast keyword matching (not embeddings) — runs within 1s hook timeout
 - Rules with 2+ keyword matches are injected into context

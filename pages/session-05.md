@@ -338,6 +338,31 @@ The workspace implements all four tiers if you're using Qdrant. Working memory i
 
 ---
 
+# Under the Hood: Memory Types
+
+<div class="grid grid-cols-2 gap-6">
+<div>
+
+### Tiered entry structure
+
+<<< @/snippets/tiered-memory.ts
+
+</div>
+<div>
+
+### Hybrid search result
+
+<<< @/snippets/hybrid-search.ts
+
+</div>
+</div>
+
+<!--
+These are the actual TypeScript types powering the memory system. TieredEntry has recency_score and importance_score so the search can weight results by freshness. HybridSearchResult combines three score signals—semantic, entity, and recency—into a single hybridScore. This is how "tiered search" weights recent sessions higher without dropping older relevant results entirely.
+-->
+
+---
+
 # Knowledge Graph & Entity Linking
 
 <div class="grid grid-cols-2 gap-8">

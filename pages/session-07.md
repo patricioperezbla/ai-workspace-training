@@ -209,11 +209,7 @@ Despite the context cost, MCP is the right choice for certain integrations. Let'
 
 ### Workspace MCP (custom, 3 tools)
 
-- `session-search` — hybrid memory search
-- `knowledge-query` — session knowledge graph
-- `role-recommend` — suggest agent role
-
-> Deliberately lightweight. Wraps `npm run` scripts so Claude can search memory within a conversation.
+<<< @/snippets/workspace-mcp.ts
 
 </div>
 </div>

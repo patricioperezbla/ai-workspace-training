@@ -85,24 +85,7 @@ Skills are markdown files with YAML frontmatter. The auto_activation section tel
 
 When you type a prompt, `skill-suggest.js` checks for relevant skills:
 
-```javascript
-const SKILL_TRIGGERS = {
-  'systematic-debugging': ['error', 'bug', 'broken', 'debug', 'root cause'],
-  'swe-frontend': ['react', 'next.js', 'component', 'frontend', 'tailwind'],
-  'security-guidance': ['auth', 'password', 'token', 'injection', 'xss']
-};
-
-const prompt = (process.env.USER_PROMPT || '').toLowerCase();
-const suggestions = [];
-for (const [skill, triggers] of Object.entries(SKILL_TRIGGERS)) {
-  if (triggers.some(trigger => prompt.includes(trigger))) {
-    suggestions.push(skill);
-  }
-}
-if (suggestions.length > 0 && suggestions.length <= 3) {
-  console.log(`Suggested skills: ${suggestions.join(', ')}`);
-}
-```
+<<< @/snippets/skill-suggest.js
 
 <!--
 This is the actual code from the workspace. When you submit a prompt, this hook scans for keywords. If you mention "react" or "component," it suggests the swe-frontend skill. If you mention "bug" or "error," it suggests systematic-debugging. Simple keyword matching but very effective at routing expertise.
