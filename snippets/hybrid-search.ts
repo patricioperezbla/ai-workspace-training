@@ -10,6 +10,7 @@
  * 5. Score fusion       — Combine scores with configurable weights
  */
 
+// #region slide
 export type MemoryTier = 'working' | 'episodic' | 'semantic' | 'resource';
 
 export interface HybridSearchResult {
@@ -30,3 +31,4 @@ export interface HybridSearchResult {
     chunk_index: number;
   };
 }
+// #endregion slide

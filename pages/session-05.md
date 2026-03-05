@@ -345,14 +345,54 @@ The workspace implements all four tiers if you're using Qdrant. Working memory i
 
 ### Tiered entry structure
 
-<<< @/snippets/tiered-memory.ts
+```typescript
+export type MemoryTier =
+  'working' | 'episodic' | 'semantic' | 'resource';
+
+export interface TieredEntry {
+  id: string;
+  tier: MemoryTier;
+  session_id: string;
+  chunk_text: string;
+  embedding: number[];
+  metadata: {
+    date: string;
+    chunk_index: number;
+    recency_score: number;    // 0-1, higher = more recent
+    importance_score: number; // 0-1, higher = more important
+    access_count: number;
+    last_accessed: string;
+    tags?: string[];
+    entities?: string[];
+  };
+}
+```
 
 </div>
 <div>
 
 ### Hybrid search result
 
-<<< @/snippets/hybrid-search.ts
+```typescript
+export interface HybridSearchResult {
+  id: string;
+  sessionId: string;
+  chunkText: string;
+  tier: MemoryTier;
+
+  // Individual scores
+  semanticScore: number;
+  entityScore: number;
+  recencyScore: number;
+  hybridScore: number; // weighted combination
+
+  matchedEntities: string[];
+  metadata: {
+    date: string;
+    chunk_index: number;
+  };
+}
+```
 
 </div>
 </div>

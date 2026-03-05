@@ -1,3 +1,4 @@
+// #region slide
 // extensions/workspace-mcp/index.ts
 // AI Workspace MCP Server — 3 lightweight tools
 // Based on: MCP Multi-Agent Framework (arXiv:2504.21030v1)
@@ -22,6 +23,7 @@ const TOOL_HANDLERS: Record<string, (args: Record<string, unknown>) => Promise<s
   'knowledge-query': executeKnowledgeQuery,
   'role-recommend': executeRoleRecommend,
 };
+// #endregion slide
 
 async function main() {
   const server = new Server(

@@ -9,6 +9,7 @@
  * 4. Resource  — Reusable code patterns and snippets
  */
 
+// #region slide
 export type MemoryTier = 'working' | 'episodic' | 'semantic' | 'resource';
 
 export interface TieredEntry {
@@ -28,3 +29,4 @@ export interface TieredEntry {
     entities?: string[];
   };
 }
+// #endregion slide

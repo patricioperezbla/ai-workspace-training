@@ -209,13 +209,51 @@ Despite the context cost, MCP is the right choice for certain integrations. Let'
 
 ### Workspace MCP (custom, 3 tools)
 
-<<< @/snippets/workspace-mcp.ts
+- `session-search` — hybrid memory search
+- `knowledge-query` — session knowledge graph
+- `role-recommend` — suggest agent role
+
+> Deliberately lightweight — 3 tools wrapping `npm run` scripts so Claude can search session memory from a conversation.
 
 </div>
 </div>
 
 <!--
 The workspace's own MCP server is deliberately lightweight—just 3 tools. It wraps the npm search scripts so Claude can search session memory directly within a conversation. For GitHub, the recommendation is to use the gh CLI for common operations and MCP only when you need features the CLI doesn't have, like Projects or complex search.
+-->
+
+---
+
+# Workspace MCP: Under the Hood
+
+```typescript
+// extensions/workspace-mcp/index.ts — 3 lightweight tools
+import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { CallToolRequestSchema, ListToolsRequestSchema, Tool }
+  from '@modelcontextprotocol/sdk/types.js';
+const TOOLS: Tool[] = [sessionSearchTool, knowledgeQueryTool, roleRecommendTool];
+const TOOL_HANDLERS: Record<string, (args: Record<string, unknown>) => Promise<string>> = {
+  'session-search': executeSessionSearch,
+  'knowledge-query': executeKnowledgeQuery,
+  'role-recommend': executeRoleRecommend,
+};
+async function main() {
+  const server = new Server(
+    { name: 'ai-workspace', version: '1.0.0' },
+    { capabilities: { tools: {} } }
+  );
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }));
+  server.setRequestHandler(CallToolRequestSchema, async ({ params }) => {
+    const text = await TOOL_HANDLERS[params.name](params.arguments ?? {});
+    return { content: [{ type: 'text', text }] };
+  });
+  await server.connect(new StdioServerTransport());
+}
+```
+
+<!--
+The full source: imports from the MCP SDK, a TOOLS array with all three tools, and a TOOL_HANDLERS map routing each tool name to its implementation. The server wires up two request handlers and connects via StdioServerTransport so Claude calls it directly.
 -->
 
 ---
