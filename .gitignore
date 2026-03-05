@@ -3,8 +3,9 @@ dist/
 .tmp/
 demos/.tmp/
 
-# Exported PDFs (large binaries, not needed in repo)
+# Exported PDFs — exclude root-level, but keep public/ version for GitHub Pages
 *.pdf
+!public/*.pdf
 
 # Keep GIFs — they're the demo assets served by GitHub Pages
 !public/demos/*.gif

@@ -1,0 +1,243 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AI Workspace Training//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+X-WR-CALNAME:AI Workspace Training
+X-WR-TIMEZONE:America/New_York
+
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+END:VTIMEZONE
+
+BEGIN:VEVENT
+UID:ai-training-s01-20260310@patricioperezbla
+DTSTART;TZID=America/New_York:20260310T120000
+DTEND;TZID=America/New_York:20260310T130000
+SUMMARY:AI Workspace Training – Session 1: The AI Coding Revolution
+DESCRIPTION:AI Workspace Training Program — Session 1 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 1: The AI Coding Revolution (Non-technical · 60 min)\n• What is an LLM? (5-min explainer\, no jargon)\n• From ChatGPT to coding agents: the evolution 2020–2026\n• What is Claude Code? Live demo of a real task\n• Business value: productivity gains\, code quality\, knowledge retention\n• What Claude Code is NOT\n• Homework: Install Claude Code\, complete one task\, share results\n\n📅 FULL SCHEDULE\nWeek 1:\n  Tue Mar 10 – S1: The AI Coding Revolution\n  Thu Mar 12 – S2: How Claude Code Works\n  Fri Mar 13 – S3: Getting Started with the Workspace\nWeek 2:\n  Tue Mar 17 – S4: Skills\, Hooks & Commands\n  Thu Mar 19 – S5: Memory Strategies for AI Agents\nWeek 3:\n  Tue Mar 24 – S6: The Self-Improving Agent\n  Thu Mar 26 – S7: Agent Orchestration\, MCP & CLI Tools\nWeek 4:\n  Tue Mar 31 – S8: Designer & QA Workflows\n  Thu Apr  2 – S9: Advanced Patterns & Tips\nWeek 5:\n  Tue Apr  7 – S10: Workshop\n  Thu Apr  9 – S11: Adoption Playbook & Retrospective\n\n⚙️ REQUIREMENTS\n• All participants: GitHub account\, Claude Code access\n• Sessions 4–11: Laptop with Node.js 18+\, Docker Desktop\n• Recommended: VS Code or terminal comfort\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=OPT-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=OPT-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s02-20260312@patricioperezbla
+DTSTART;TZID=America/New_York:20260312T120000
+DTEND;TZID=America/New_York:20260312T130000
+SUMMARY:AI Workspace Training – Session 2: How Claude Code Works
+DESCRIPTION:AI Workspace Training Program — Session 2 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 2: How Claude Code Works (Light technical · 60 min)\n• The agentic conversation loop: prompt → think → tool use → result\n• Claude Code's tool belt: Read\, Write\, Edit\, Bash\, Grep\, Glob\n• The context window: what the AI "sees" and forgets\n• CLAUDE.md — giving the AI project knowledge\n• Permissions model: what it can/can't do without asking\n• Costs & token usage (ROI: 8–15x at typical usage)\n• Homework: Write a CLAUDE.md for your project\n\n📅 FULL SCHEDULE\nWeek 1:\n  Tue Mar 10 – S1: The AI Coding Revolution\n  Thu Mar 12 – S2: How Claude Code Works\n  Fri Mar 13 – S3: Getting Started with the Workspace\nWeek 2:\n  Tue Mar 17 – S4: Skills\, Hooks & Commands\n  Thu Mar 19 – S5: Memory Strategies for AI Agents\nWeek 3:\n  Tue Mar 24 – S6: The Self-Improving Agent\n  Thu Mar 26 – S7: Agent Orchestration\, MCP & CLI Tools\nWeek 4:\n  Tue Mar 31 – S8: Designer & QA Workflows\n  Thu Apr  2 – S9: Advanced Patterns & Tips\nWeek 5:\n  Tue Apr  7 – S10: Workshop\n  Thu Apr  9 – S11: Adoption Playbook & Retrospective\n\n⚙️ REQUIREMENTS\n• All participants: GitHub account\, Claude Code access\n• Sessions 4–11: Node.js 18+\, Docker Desktop\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=OPT-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=OPT-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s03-20260313@patricioperezbla
+DTSTART;TZID=America/New_York:20260313T120000
+DTEND;TZID=America/New_York:20260313T130000
+SUMMARY:AI Workspace Training – Session 3: Getting Started with the Workspace
+DESCRIPTION:AI Workspace Training Program — Session 3 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 3: Getting Started with the Workspace (Mixed audience · 60 min)\n• Three problems with vanilla Claude Code: amnesia\, knowledge silos\, no guardrails\n• Solution: starter-ai-workspace — the "OS" for Claude Code\n• Architecture overview with diagrams\n• The virtuous cycle: every session makes the next one better\n• What changes for each role (PMs\, executives\, designers\, QA\, devs)\n• Homework: Fork & explore the workspace\n\n📅 FULL SCHEDULE\nWeek 1:\n  Tue Mar 10 – S1: The AI Coding Revolution\n  Thu Mar 12 – S2: How Claude Code Works\n  Fri Mar 13 – S3: Getting Started with the Workspace\nWeek 2:\n  Tue Mar 17 – S4: Skills\, Hooks & Commands\n  Thu Mar 19 – S5: Memory Strategies for AI Agents\nWeek 3:\n  Tue Mar 24 – S6: The Self-Improving Agent\n  Thu Mar 26 – S7: Agent Orchestration\, MCP & CLI Tools\nWeek 4:\n  Tue Mar 31 – S8: Designer & QA Workflows\n  Thu Apr  2 – S9: Advanced Patterns & Tips\nWeek 5:\n  Tue Apr  7 – S10: Workshop\n  Thu Apr  9 – S11: Adoption Playbook & Retrospective\n\n⚙️ REQUIREMENTS\n• All participants: GitHub account\, Claude Code access\n• Sessions 4–11: Node.js 18+\, Docker Desktop\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=OPT-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=OPT-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s04-20260317@patricioperezbla
+DTSTART;TZID=America/New_York:20260317T120000
+DTEND;TZID=America/New_York:20260317T130000
+SUMMARY:AI Workspace Training – Session 4: Skills, Hooks & Commands
+DESCRIPTION:AI Workspace Training Program — Session 4 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 4: Skills\, Hooks & Commands (Technical · 60 min)\n• Skills system: domain expertise auto-loaded on demand\n• Hooks system: lifecycle events for quality enforcement\n• Code quality hooks: block 'as any'\, block hardcoded secrets\, warn on debug code\n• Slash commands: /commit\, /debug\, /pr-review\, /session-review\n• How to create your own skill (live walkthrough)\n• Homework: Create a skill for your team's conventions\n\n📅 FULL SCHEDULE\nWeek 2 (this week):\n  Tue Mar 17 – S4: Skills\, Hooks & Commands\n  Thu Mar 19 – S5: Memory Strategies for AI Agents\nFull schedule:\n  Mar 10\, 12\, 13 – S1\, S2\, S3 (completed)\n  Mar 17\, 19 – S4\, S5\n  Mar 24\, 26 – S6\, S7\n  Mar 31\, Apr 2 – S8\, S9\n  Apr 7\, 9 – S10\, S11\n\n⚙️ REQUIREMENTS\n• Node.js 18+\, Docker Desktop\n• VS Code or terminal comfort recommended\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s05-20260319@patricioperezbla
+DTSTART;TZID=America/New_York:20260319T120000
+DTEND;TZID=America/New_York:20260319T130000
+SUMMARY:AI Workspace Training – Session 5: Memory Strategies for AI Agents
+DESCRIPTION:AI Workspace Training Program — Session 5 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 5: Memory Strategies for AI Agents (Technical · 60 min)\n• The memory problem: Claude forgets between sessions\n• How embeddings work: text → vector → similarity search\n• Qdrant vector database and the embedding pipeline\n• Three search modes: semantic\, hybrid\, tiered\n• Knowledge graph: entity extraction and session relationships\n• Tiered memory architecture (Working → Episodic → Semantic → Resource)\n• Homework: Embed sessions\, search them\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s06-20260324@patricioperezbla
+DTSTART;TZID=America/New_York:20260324T120000
+DTEND;TZID=America/New_York:20260324T130000
+SUMMARY:AI Workspace Training – Session 6: The Self-Improving Agent
+DESCRIPTION:AI Workspace Training Program — Session 6 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 6: The Self-Improving Agent (Technical · 60 min)\n• Research foundations: ExpeL\, Voyager\, Reflexion\, MemGPT\n• The self-improvement pipeline: quality scoring → insight extraction → rules\n• Rule lifecycle: proposed → active → reinforced → stale → retired\n• Runtime injection: keyword-matched rules injected into Claude's context\n• Safety: atomic git commits\, revertable\, 500-rule cap\n• Homework: Run insight extraction\, review rules\, write a manual rule\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s07-20260326@patricioperezbla
+DTSTART;TZID=America/New_York:20260326T120000
+DTEND;TZID=America/New_York:20260326T130000
+SUMMARY:AI Workspace Training – Session 7: Agent Orchestration, MCP & CLI Tools
+DESCRIPTION:AI Workspace Training Program — Session 7 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 7: Agent Orchestration\, MCP & CLI Tools (Technical · 60 min)\n• MCP (Model Context Protocol) — the "USB-C for AI"\n• Workspace MCP servers: GitHub\, Chrome DevTools\, custom workspace MCP\n• MCP for designers: Figma ecosystem\, design tokens pipeline\n• Multi-agent architecture: sub-agents vs Agent Teams\n• Context management and the OODA loop\n• Homework: Build an MCP integration\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s08-20260331@patricioperezbla
+DTSTART;TZID=America/New_York:20260331T120000
+DTEND;TZID=America/New_York:20260331T130000
+SUMMARY:AI Workspace Training – Session 8: Designer & QA Workflows
+DESCRIPTION:AI Workspace Training Program — Session 8 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 8: Designer & QA Workflows (Technical · 60 min)\n• Figma → code pipelines with MCP\n• Design system token automation\n• QA workflows\, bug investigation\, and the /debug command\n• Role-specific AI patterns for non-developers\n• Adoption playbook: 5-phase ladder from CLAUDE.md to self-improvement\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s09-20260402@patricioperezbla
+DTSTART;TZID=America/New_York:20260402T120000
+DTEND;TZID=America/New_York:20260402T130000
+SUMMARY:AI Workspace Training – Session 9: Advanced Patterns & Tips
+DESCRIPTION:AI Workspace Training Program — Session 9 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 9: Advanced Patterns & Tips (Technical · 60 min)\n• Advanced prompting patterns\n• Checkpoint-revert workflow for risky changes\n• Context management: /compact\, fresh sessions\, token budgeting\n• Sub-agent parallelization strategies\n• Real-world patterns from the team's experience\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s10-20260407@patricioperezbla
+DTSTART;TZID=America/New_York:20260407T120000
+DTEND;TZID=America/New_York:20260407T130000
+SUMMARY:AI Workspace Training – Session 10: Workshop
+DESCRIPTION:AI Workspace Training Program — Session 10 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 10: Workshop (Hands-on · 60 min)\n• Setup walkthrough: fork\, clone\, configure\, first embed\n• Hands-on exercise: complete a real task using the full workspace\n• Role-specific tasks for devs\, PMs\, designers\n• ROI discussion: where the value compounds over time\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+BEGIN:VEVENT
+UID:ai-training-s11-20260409@patricioperezbla
+DTSTART;TZID=America/New_York:20260409T120000
+DTEND;TZID=America/New_York:20260409T130000
+SUMMARY:AI Workspace Training – Session 11: Adoption Playbook & Retrospective
+DESCRIPTION:AI Workspace Training Program — Session 11 of 11\n\nPresented by: Patricio Perez\, Tech Lead — Node Backend Team\n\n📋 THIS SESSION\nSession 11: Adoption Playbook & Retrospective (60 min)\n• 5-phase adoption ladder: from CLAUDE.md to self-improvement\n• Getting started checklist\n• Team retrospective: what worked\, what to improve\n• Next steps and ongoing learning resources\n• Graduation 🎓\n\n🎉 Final session of the AI Workspace Training Program!\n\n📊 Attendance is tracked for each session (billing purposes).\n\n📊 COURSE SLIDES\n• Live (animated): https://patricioperezbla.github.io/ai-workspace-training/\n• PDF download: https://patricioperezbla.github.io/ai-workspace-training/ai-workspace-training_v10.pdf
+ATTENDEE;CN="Augusto Abichara";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:augusto.abichara@prescriberpoint.com
+ATTENDEE;CN="Cintia Gonzalez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:cintia.gonzalez@prescriberpoint.com
+ATTENDEE;CN="Efrain Bastidas";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:efrain.bastidas@prescriberpoint.com
+ATTENDEE;CN="Fernanda Pacheco";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:fernanda.pacheco@prescriberpoint.com
+ATTENDEE;CN="Jonathan Mazaia";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:jonathan.mazaia@prescriberpoint.com
+ATTENDEE;CN="Lucas Angulski";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:lucas.angulski@prescriberpoint.com
+ATTENDEE;CN="Mailen Lopez";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:mailen.lopez@prescriberpoint.com
+ATTENDEE;CN="Nate Lassiter";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:natelassiter@ballastlane.com
+ATTENDEE;CN="Oscar Albornoz";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:oscar.albornoz@prescriberpoint.com
+ATTENDEE;CN="Ronny Cordova";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:ronny.cordova@prescriberpoint.com
+ATTENDEE;CN="Sebastian Beltran";RSVP=TRUE;ROLE=REQ-PARTICIPANT:mailto:sebastian.beltran@prescriberpoint.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+
+END:VCALENDAR
