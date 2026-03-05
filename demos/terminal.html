@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal Demo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d1117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .window {
+    width: 800px;
+    height: 500px;
+    background: #0d1117;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #30363d, 0 24px 64px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Cascadia Code', 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+
+  /* ── Title bar ── */
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: #161b22;
+    border-bottom: 1px solid #21262d;
+    flex-shrink: 0;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 4px rgba(0,0,0,0.4); }
+  .dot-red    { background: #ff5f57; }
+  .dot-yellow { background: #febc2e; }
+  .dot-green  { background: #28c840; }
+  .title {
+    flex: 1;
+    text-align: center;
+    color: #6e7681;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    margin-right: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* ── Scrollable content area ── */
+  .content {
+    flex: 1;
+    padding: 18px 22px 16px;
+    overflow: hidden;
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #e6edf3;
+  }
+
+  /* ── Prompt line ── */
+  .prompt-wrap {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    margin-bottom: 2px;
+  }
+  .ps-user   { color: #3fb950; font-weight: 600; }
+  .ps-at     { color: #484f58; }
+  .ps-host   { color: #58a6ff; }
+  .ps-sep    { color: #484f58; }
+  .ps-dir    { color: #79c0ff; font-weight: 600; }
+  .ps-dollar { color: #f0883e; margin: 0 8px; }
+  .ps-cmd    { color: #f0f6fc; }
+
+  /* ── Blinking cursor ── */
+  .cursor {
+    display: inline-block;
+    width: 7px; height: 14px;
+    background: #58a6ff;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+    margin-left: 1px;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ── Output line styles ── */
+  .line { white-space: pre; display: block; }
+
+  /* plain output */
+  .line.dim       { color: #484f58; }
+  .line.muted     { color: #6e7681; }
+  .line.white     { color: #e6edf3; }
+  .line.green     { color: #3fb950; }
+  .line.blue      { color: #58a6ff; }
+  .line.cyan      { color: #39c5cf; }
+  .line.yellow    { color: #e3b341; }
+  .line.orange    { color: #f0883e; }
+  .line.red       { color: #f85149; }
+  .line.purple    { color: #bc8cff; }
+  .line.bold-green{ color: #3fb950; font-weight: 700; }
+  .line.bold-blue { color: #58a6ff; font-weight: 700; }
+
+  /* Tool calls: ● Reading ... */
+  .line.tool {
+    color: #8b949e;
+    padding-left: 0;
+  }
+  .line.tool .tool-icon { color: #6e40c9; }
+  .line.tool .tool-name { color: #bc8cff; }
+  .line.tool .tool-path { color: #79c0ff; }
+  .line.tool .tool-note { color: #6e7681; }
+
+  /* User prompt turn (> ...) */
+  .line.user-turn {
+    color: #e6edf3;
+    margin-top: 6px;
+  }
+  .line.user-turn .chevron { color: #3fb950; font-weight: 700; margin-right: 6px; }
+  .line.user-turn .text    { color: #e6edf3; }
+
+  /* Claude response text */
+  .line.claude { color: #c9d1d9; padding-left: 2px; }
+
+  /* Success / error / warn callouts */
+  .line.success {
+    color: #3fb950;
+  }
+  .line.error   { color: #f85149; }
+  .line.warn    { color: #e3b341; }
+
+  /* Code diff */
+  .line.diff-add { color: #3fb950; }
+  .line.diff-rem { color: #f85149; }
+  .line.diff-hdr { color: #6e7681; }
+
+  /* Separator / ruler */
+  .line.sep { color: #21262d; }
+
+  /* Badge labels like [WORKING] [EPISODIC] */
+  .badge-working  { color: #e3b341; }
+  .badge-episodic { color: #58a6ff; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="titlebar">
+    <div class="dot dot-red"></div>
+    <div class="dot dot-yellow"></div>
+    <div class="dot dot-green"></div>
+    <div class="title" id="title-el">zsh — ai-workspace</div>
+  </div>
+  <div class="content" id="content"></div>
+</div>
+
+<script>
+// Demo data is injected by generate-demos.mjs via window.DEMO_DATA
+const DATA = window.DEMO_DATA || { title: 'demo', commands: [] };
+const content = document.getElementById('content');
+const titleEl = document.getElementById('title-el');
+if (DATA.title) titleEl.textContent = DATA.title;
+
+// ── Timing constants (can be overridden per demo)
+const T = {
+  char:       DATA.charDelay    ?? 28,   // ms per character typed
+  lineGap:    DATA.lineGap      ?? 55,   // ms between output lines
+  cmdPause:   DATA.cmdPause     ?? 500,  // ms pause after typing before output
+  blockPause: DATA.blockPause   ?? 400,  // ms pause between command blocks
+  endPause:   DATA.endPause     ?? 1400, // ms idle at end before loop
+};
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ── Build the PS1 prompt
+function buildPrompt(promptStr) {
+  const m = promptStr.match(/^(.+?)@(.+?):(.+)$/);
+  const [user, host, dir] = m ? [m[1], m[2], m[3]] : ['user', 'host', '~'];
+  const wrap = document.createElement('div');
+  wrap.className = 'prompt-wrap';
+  wrap.innerHTML =
+    `<span class="ps-user">${esc(user)}</span>` +
+    `<span class="ps-at">@</span>` +
+    `<span class="ps-host">${esc(host)}</span>` +
+    `<span class="ps-sep">:</span>` +
+    `<span class="ps-dir">${esc(dir)}</span>` +
+    `<span class="ps-dollar">$</span>` +
+    `<span class="ps-cmd" id="_cmd_${uid()}"></span>`;
+  content.appendChild(wrap);
+  return wrap.querySelector('[id^="_cmd_"]');
+}
+
+// ── Append a styled output line
+function appendLine(text, cls) {
+  const div = document.createElement('div');
+  div.className = `line ${cls || 'muted'}`;
+
+  if (cls === 'tool') {
+    // Parse: ● ToolName path (note)
+    const tm = text.match(/^(●|◆|○)\s+(\w[\w\s]*)?\s+(.+?)(\s+\(.*\))?$/);
+    if (tm) {
+      div.innerHTML =
+        `<span class="tool-icon">${esc(tm[1])}</span> ` +
+        (tm[2] ? `<span class="tool-name">${esc(tm[2].trim())}</span> ` : '') +
+        `<span class="tool-path">${esc(tm[3] || '')}</span>` +
+        (tm[4] ? `<span class="tool-note">${esc(tm[4])}</span>` : '');
+    } else {
+      div.textContent = text;
+    }
+  } else if (cls === 'user-turn') {
+    const chevron = text.startsWith('>') ? '>' : '';
+    const rest = chevron ? text.slice(1).trimStart() : text;
+    div.innerHTML = `<span class="chevron">${chevron}</span><span class="text">${esc(rest)}</span>`;
+  } else {
+    div.textContent = text;
+  }
+  content.appendChild(div);
+}
+
+// ── Type a command character by character
+async function typeCmd(el, text) {
+  for (const ch of text) {
+    el.textContent += ch;
+    await sleep(T.char);
+  }
+}
+
+// ── Run a full command block
+async function runBlock(block) {
+  const cmdEl = buildPrompt(block.prompt);
+  await sleep(200);
+  await typeCmd(cmdEl, block.cmd);
+  await sleep(T.cmdPause);
+
+  for (const line of block.output ?? []) {
+    if (line === null) {
+      // spacer
+      const sp = document.createElement('div');
+      sp.style.height = '5px';
+      content.appendChild(sp);
+    } else {
+      appendLine(line.text ?? '', line.cls ?? 'muted');
+    }
+    await sleep(T.lineGap);
+  }
+  await sleep(T.blockPause);
+}
+
+// ── Main loop
+async function run() {
+  await sleep(350);
+  for (const block of DATA.commands) {
+    await runBlock(block);
+  }
+  // Add final blinking cursor
+  const lastPromptEl = buildPrompt(DATA.commands[DATA.commands.length - 1].prompt);
+  const cur = document.createElement('span');
+  cur.className = 'cursor';
+  lastPromptEl.parentNode.insertBefore(cur, lastPromptEl.nextSibling);
+  await sleep(T.endPause);
+  window.__DEMO_DONE__ = true;
+}
+
+// ── Helpers
+let _uid = 0;
+function uid() { return ++_uid; }
+function esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+run();
+</script>
+</body>
+</html>

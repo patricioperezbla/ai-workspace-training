@@ -1,0 +1,30 @@
+{
+  "extendedThinking": { "enabled": true, "budgetTokens": 10000 },
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Write|Edit",
+      "hooks": [
+        { "type": "command", "command": "node .claude/hooks/scripts/log-file-modification.js", "timeout": 1000 },
+        { "type": "command", "command": "node .claude/hooks/scripts/verify-file-references.js", "timeout": 2000 }
+      ]
+    }],
+    "UserPromptSubmit": [{
+      "hooks": [
+        { "type": "command", "command": "node .claude/hooks/scripts/skill-suggest.js", "timeout": 1000 },
+        { "type": "command", "command": "node .claude/hooks/scripts/inject-rules.js", "timeout": 1000 }
+      ]
+    }],
+    "PreCompact": [{
+      "matcher": "auto|manual",
+      "hooks": [
+        { "type": "command", "command": "node .claude/hooks/scripts/export-on-compact.js", "timeout": 15000 }
+      ]
+    }],
+    "SessionEnd": [{
+      "hooks": [
+        { "type": "command", "command": "node .claude/hooks/scripts/log-session-end.js", "timeout": 5000 },
+        { "type": "command", "command": "node .claude/hooks/scripts/export-conversation.js", "timeout": 10000 }
+      ]
+    }]
+  }
+}

@@ -1,0 +1,32 @@
+# .claude/skills/swe-frontend/SKILL.md (frontmatter)
+---
+name: swe-frontend
+description: >
+  Specialized frontend engineering agent — React/Next.js expertise.
+version: 1.2.0
+metadata:
+  created: 2025-07-28
+  dependencies:
+    skills: [react-typescript-standards, compliance-and-consent]
+  auto_activation:
+    file_patterns:
+      - "*.tsx"
+      - "*.jsx"
+      - "*.ts"
+      - "*.css"
+      - "**/next.config.*"
+      - "**/tailwind.config.*"
+      - "**/*.stories.*"
+    directory_patterns:
+      - "**/components/"
+      - "**/pages/"
+      - "**/app/"
+      - "**/hooks/"
+    keywords:
+      - "react"
+      - "next.js"
+      - "typescript"
+      - "tailwind"
+      - "accessibility"
+      - "a11y"
+---

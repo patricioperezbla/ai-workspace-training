@@ -1,0 +1,149 @@
+/* AI Workspace Training - Custom Styles */
+
+:root {
+  --slidev-theme-primary: #6366f1;
+  --slidev-theme-accents: #818cf8;
+}
+
+/* Speaker notes styling */
+.slidev-layout .note {
+  font-size: 0.85em;
+  color: #6b7280;
+  border-left: 3px solid var(--slidev-theme-primary);
+  padding-left: 1em;
+  margin-top: 1em;
+}
+
+/* Consistent diagram sizing — keep small for PDF export */
+.mermaid {
+  max-height: 300px;
+  font-size: 0.85em;
+}
+
+/* Tighter spacing for dense slides */
+.slidev-layout h3 {
+  margin-top: 0.3em;
+  margin-bottom: 0.2em;
+}
+
+.slidev-layout .grid {
+  gap: 1rem;
+}
+
+/* Smaller code blocks to prevent overflow */
+.slidev-layout pre {
+  font-size: 0.82em;
+  line-height: 1.4;
+  margin: 0.3em 0;
+}
+
+/* Tighter tables */
+.slidev-layout table {
+  font-size: 0.85em;
+}
+
+.slidev-layout table td,
+.slidev-layout table th {
+  padding: 0.2em 0.5em;
+}
+
+/* Tighter blockquotes */
+.slidev-layout blockquote {
+  margin: 0.3em 0;
+  padding: 0.3em 0.8em;
+}
+
+/* Tighter lists */
+.slidev-layout ul, .slidev-layout ol {
+  margin: 0.2em 0;
+}
+
+.slidev-layout li {
+  margin: 0.1em 0;
+}
+
+/* Two-column code comparison */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Highlight box */
+.highlight-box {
+  background: #f0f0ff;
+  border: 1px solid var(--slidev-theme-primary);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Stat cards */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-card .number {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-card .label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-top: 0.3rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--slidev-theme-primary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--slidev-theme-primary);
+}
+
+/* Keyboard shortcut badges */
+kbd {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.85em;
+  font-family: monospace;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ai-workspace-training",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --port 3030",
+    "build": "slidev build",
+    "export": "slidev export",
+    "build:gh": "slidev build --base /starter-ai-workspace/ && find dist -name '*.js' -exec sed -i 's|\"/demos/|\"/starter-ai-workspace/demos/|g' {} + && find dist -name '*.html' -exec sed -i 's|\"/demos/|\"/starter-ai-workspace/demos/|g' {} +",
+    "demos:generate": "node demos/generate-demos.mjs",
+    "demos:clean": "rm -f public/demos/*.gif demos/.tmp/*.webm demos/.tmp/*.html"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.0.0",
+    "@slidev/theme-seriph": "latest"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.58.2"
+  }
+}

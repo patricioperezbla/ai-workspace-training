@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.tmp/
+demos/.tmp/
+
+# Exported PDFs (large binaries, not needed in repo)
+*.pdf
+
+# Keep GIFs — they're the demo assets served by GitHub Pages
+!public/demos/*.gif
